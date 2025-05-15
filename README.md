@@ -36,9 +36,9 @@ The app is built using **React Hooks**, **Context API**, and **react-router-dom*
 
 ## 📂 Project Structure
 
-/src
-├── components/
-├── context/
-├── pages/
-├── App.js
-└── index.js
+/src  
+├── components/  
+├── context/  
+├── pages/  
+├── App.js  
+└── index.js  
