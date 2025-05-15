@@ -1,44 +1,12 @@
-# 🧑‍💼 Employee-Admin Task Dashboard
+# React + Vite
 
-A fully functional **React JS** application that simulates a multi-role task management system using `localStorage` for data persistence. This beginner-friendly project is part of a MERN Stack learning series and focuses on the **frontend (React)** portion of full-stack development.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## 📘 Project Description
+Currently, two official plugins are available:
 
-The **Employee-Admin Task Dashboard** allows two types of users — **Admins** and **Employees** — to interact with a task management interface.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-- **Admins** can:
-  - Create and assign tasks
-  - View all employee data
-  - Manage task information
+## Expanding the ESLint configuration
 
-- **Employees** can:
-  - View assigned tasks
-  - Track task progress
-
-The app is built using **React Hooks**, **Context API**, and **react-router-dom** for routing. Data is stored and retrieved using **localStorage**, simulating a backend-less environment. It’s ideal for learners who want to practice frontend development without needing a database or server.
-
-## 🚀 Features
-
-- Role-based login simulation (Admin & Employee)
-- Context API for global state management
-- Task creation and assignment
-- Route protection based on user role
-- Data persistence using `localStorage`
-- Logout and session handling
-
-## 🛠 Tech Stack
-
-- **Frontend**: React JS
-- **Routing**: React Router DOM
-- **State Management**: useState, useContext
-- **Persistence**: localStorage
-- **Styling**: CSS or Tailwind (as per project setup)
-
-## 📂 Project Structure
-
-/src  
-├── components/  
-├── context/  
-├── pages/  
-├── App.js  
-└── index.js  
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
