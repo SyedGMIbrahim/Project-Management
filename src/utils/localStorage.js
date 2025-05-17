@@ -1,22 +1,43 @@
-
-
-export const setLocalStorage = () => {
-    const data = localStorage.getItem("data");
-    if (!data) {
-      localStorage.setItem(
-        "data",
-        JSON.stringify({
-          employees: [
-            { username: "admin", password: "dummyPass", role: "admin" },
-            { username: "emp1", password: "dummyPass", role: "employee" },
-          ],
-          tasks: [],
-        })
-      );
-    }
+const initialData = {
+    employees: [
+      {
+        id: 1,
+        username: "admin",
+        password: "adminpassword",
+        role: "admin",
+        name: "Admin User"
+      },
+      {
+        id: 2,
+        username: "employee1",
+        password: "emp123",
+        role: "employee",
+        name: "Employee One"
+      }
+    ],
+    currentUser: null,
   };
   
-  export const getLocalStorage = () => {
-    return JSON.parse(localStorage.getItem("data")) || {};
-  };
+  export function getLocalStorage() {
+    const data = localStorage.getItem("data");
+    if (!data) {
+     
+      localStorage.setItem("data", JSON.stringify(initialData));
+      return initialData;
+    }
+    try {
+      return JSON.parse(data);
+    } catch (error) {
+      console.error("Error parsing localStorage data:", error);
+      return initialData;
+    }
+  }
+  
+  export function setLocalStorage(data) {
+    try {
+      localStorage.setItem("data", JSON.stringify(data));
+    } catch (error) {
+      console.error("Error setting localStorage data:", error);
+    }
+  }
   
