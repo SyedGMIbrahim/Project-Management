@@ -12,7 +12,7 @@ const Tasks = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Check if user is logged in
+ 
     if (!userData) {
       navigate("/login");
       return;
@@ -23,7 +23,7 @@ const Tasks = () => {
       if (data.tasks) {
         setTasks(data.tasks);
       }
-      // Get employees list for admin to assign tasks
+    
       if (data.employees) {
         setEmployees(data.employees.filter(emp => emp.role === 'employee'));
       }
