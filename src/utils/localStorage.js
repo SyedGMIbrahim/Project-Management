@@ -7,8 +7,8 @@ export const setLocalStorage = () => {
         "data",
         JSON.stringify({
           employees: [
-            { username: "admin", password: "adminpassword", role: "admin" },
-            { username: "emp1", password: "emp123", role: "employee" },
+            { username: "admin", password: "dummyPass", role: "admin" },
+            { username: "emp1", password: "dummyPass", role: "employee" },
           ],
           tasks: [],
         })
