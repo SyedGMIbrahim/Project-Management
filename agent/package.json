@@ -1,0 +1,13 @@
+{
+  "name": "coding-agent",
+  "version": "1.0.0",
+  "description": "An AI-powered coding agent that generates and deploys code",
+  "main": "index.js",
+  "scripts": {
+    "start": "node cli.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "openai": "^4.20.1"
+  }
+} 
