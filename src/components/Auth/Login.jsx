@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
-import { getLocalStorage } from "../utils/localStorage";
-import { AuthContext } from "../context/AuthProvider";
+import { getLocalStorage } from "../../utils/localStorage";
+import { AuthContext } from "../../context/AuthProvider";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {

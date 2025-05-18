@@ -1,5 +1,5 @@
 import React from "react";
-import Logout from "./Logout";
+import Logout from "../Auth/Logout";
 import { useNavigate } from "react-router-dom";
 
 const EmployeeDashboard = () => {

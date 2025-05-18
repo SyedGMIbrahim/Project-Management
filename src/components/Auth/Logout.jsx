@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../context/AuthProvider";
-import { getLocalStorage } from "../utils/localStorage";
+import { AuthContext } from "../../context/AuthProvider";
+import { getLocalStorage } from "../../utils/localStorage";
 
 const Logout = () => {
   const [userData, setUserData] = useContext(AuthContext);
