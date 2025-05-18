@@ -9,8 +9,8 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     setLocalStorage(); 
     const data = getLocalStorage();
-    if (data?.currentUser) {
-      setUserData(data.currentUser);
+    if (data?.loggedInUser) {
+      setUserData(data.loggedInUser);
     }
   }, []);
 

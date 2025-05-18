@@ -1,30 +1,16 @@
-import React from "react";
-import Logout from "./Logout";
-import { useNavigate } from "react-router-dom";
+import React from 'react'
+import Header from '../other/Header'
+import CreateTask from '../other/CreateTask'
+import AllTask from '../other/AllTasks'
 
-const AdminDashboard = () => {
-  const navigate = useNavigate();
+const AdminDashboard = (props) => {
+    return (
+        <div className='h-screen w-full p-7'>
+            <Header changeUser={props.changeUser} />
+            <CreateTask />
+            <AllTask />
+        </div>
+    )
+}
 
-  return (
-    <div style={{ padding: '20px' }}>
-      <h1>Admin Dashboard</h1>
-      <div style={{ display: 'flex', gap: '10px', marginTop: '20px' }}>
-        <button 
-          onClick={() => navigate('/tasks')}
-          style={{
-            backgroundColor: '#4CAF50',
-            color: 'white',
-            padding: '8px 16px',
-            borderRadius: '4px',
-            border: 'none'
-          }}
-        >
-          Manage Tasks
-        </button>
-        <Logout />
-      </div>
-    </div>
-  );
-};
-
-export default AdminDashboard;
+export default AdminDashboard
