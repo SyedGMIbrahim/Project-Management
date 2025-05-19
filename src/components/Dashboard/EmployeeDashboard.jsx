@@ -4,7 +4,7 @@ import TaskListNumbers from '../other/TaskListNumbers';
 import TaskList from '../TaskList/TaskList'
 
 
-const styles = {
+const style = {
   dashboard: {
     padding: '40px',
     width: '100%',
@@ -17,7 +17,7 @@ const styles = {
 const EmployeeDashboard = (props) => {
   console.log("EmployeeDashboard data", props.data);
   return (
-    <div style={styles.dashboard}>
+    <div style={style.dashboard}>
       <Header changeUser={props.changeUser} data={props.data}/>
       <TaskListNumbers data={props.data} />
       <TaskList data={props.data} />

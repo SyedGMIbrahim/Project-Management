@@ -23,7 +23,7 @@ const Header = (props) => {
       </h1>
       <button
         onClick={logOutUser}
-        className="bg-red-600 text-base font-medium text-white px-5 py-2 rounded-sm"
+        className="bg-red-600 cursor-pointer text-base font-medium text-white px-5 py-2 rounded-sm"
       >
         Log Out
       </button>
