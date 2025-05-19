@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { setLocalStorage } from '../../utils/localStorage';
 
-const Header = ({ data, changeUser }) => {
-  const [username, setUsername] = useState('');
+const Header = (props) => {
+  const [username, setUsername] = useState('Admin');
 
   useEffect(() => {
-    setUsername(data?.firstName || 'Admin');
-  }, [data]);
+    if (props.data) {
+      setUsername(props.data.firstName);
+    }
+  }, [props.data]);
 
   const logOutUser = () => {
-    setLocalStorage('loggedInUser', '');
-    changeUser('');
+    localStorage.setItem('loggedInUser', '');
+    props.changeUser('');
+    window.location.reload();
   };
 
   return (
@@ -21,7 +23,7 @@ const Header = ({ data, changeUser }) => {
       </h1>
       <button
         onClick={logOutUser}
-        className="bg-red-600 text-base font-medium text-white px-5 py-2 rounded-sm"
+        className="bg-red-600 cursor-pointer text-base font-medium text-white px-5 py-2 rounded-sm"
       >
         Log Out
       </button>
