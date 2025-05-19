@@ -17,10 +17,12 @@ const CreateTask = () => {
     e.preventDefault ();
 
     setNewTask ({
+      id: Date.now(),
       taskTitle,
       taskDescription,
       taskDate,
       category,
+      asignTo,
       active: false,
       newTask: true,
       failed: false,
@@ -35,8 +37,9 @@ const CreateTask = () => {
         elem.taskCounts.newTask = elem.taskCounts.newTask + 1;
       }
     });
+    
     setUserData (data);
-    console.log (data);
+    // console.log (data);
 
     setTaskTitle ('');
     setCategory ('');
