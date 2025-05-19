@@ -1,28 +1,26 @@
-import React from "react";
-import Logout from "../Auth/Logout";
-import { useNavigate } from "react-router-dom";
+import React from 'react';
+import Header from '../other/Header';
+import TaskListNumbers from '../other/TaskListNumbers';
+import TaskList from '../TaskList/TaskList'
 
-const EmployeeDashboard = () => {
-  const navigate = useNavigate();
 
+const styles = {
+  dashboard: {
+    padding: '40px',
+    width: '100%',
+    backgroundColor: '#1C1C1C',
+    height: '100vh',
+    color: 'white',
+  },
+};
+
+const EmployeeDashboard = (props) => {
+  console.log("EmployeeDashboard data", props.data);
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>Employee Dashboard</h1>
-      <div style={{ display: 'flex', gap: '10px', marginTop: '20px' }}>
-        <button 
-          onClick={() => navigate('/tasks')}
-          style={{
-            backgroundColor: '#4CAF50',
-            color: 'white',
-            padding: '8px 16px',
-            borderRadius: '4px',
-            border: 'none'
-          }}
-        >
-          View My Tasks
-        </button>
-        <Logout />
-      </div>
+    <div style={styles.dashboard}>
+      <Header changeUser={props.changeUser} data={props.data}/>
+      <TaskListNumbers data={props.data} />
+      <TaskList data={props.data} />
     </div>
   );
 };
