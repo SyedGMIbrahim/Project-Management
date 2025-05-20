@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthProvider";
 
-const CreateTask = () => {
+const CreateTask = ({setShowCreateForm}) => {
   const [userData, setUserData] = useContext(AuthContext);
 
   const [taskTitle, setTaskTitle] = useState("");
@@ -56,6 +56,7 @@ const CreateTask = () => {
       });
 
       setUserData(updatedData);
+      localStorage.setItem('employees', JSON.stringify(updatedData));
 
       setTaskTitle("");
       setCategory("");
@@ -66,7 +67,7 @@ const CreateTask = () => {
   };
 
   return (
-    <div className="p-5 bg-[#1c1c1c] mt-5 rounded">
+    <div className="p-5 bg-[#1c1c1c] mt-5 rounded relative">
       <form
         onSubmit={submitHandler}
         className="flex flex-wrap w-full items-start justify-between"
@@ -126,6 +127,13 @@ const CreateTask = () => {
           </button>
         </div>
       </form>
+      <button 
+       class="absolute top-0 right-0 text-white-800 hover:text-gray-700 text-lg font-bold" 
+       aria-label="Close"
+       onClick={()=>setShowCreateForm(false)}
+      >
+        &times;
+      </button>
     </div>
   );
 };
