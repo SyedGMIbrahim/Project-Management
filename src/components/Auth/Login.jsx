@@ -1,63 +1,62 @@
 import React, { useState } from "react";
 
-
-const Login = ({handleLogin}) => {
+const Login = ({ handleLogin }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-const submitHandler = (e)=>{
-        e.preventDefault()
-        handleLogin(username,password)
-        setUsername("")
-        setPassword("")
-        console.log("Login data", username, password);
-    }
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    handleLogin(username, password);
+    console.log("Login data", username, password);
+    setUsername("");
+    setPassword("");
+  };
 
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-black px-4">
       <form
         onSubmit={submitHandler}
-        className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-96"
+        className="bg-gray-900 border border-gray-700 p-8 rounded-2xl shadow-xl w-full max-w-sm text-white"
       >
-        <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
+        <h2 className="text-3xl font-bold mb-6 text-center text-white">
+          Login
+        </h2>
 
-        <div className="mb-4">
-          <label className="block text-black font-bold mb-2" htmlFor="username">
+        <div className="mb-5">
+          <label className="block text-sm font-medium text-gray-300 mb-1">
             Username
           </label>
           <input
-            id="username"
             type="text"
-            required
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            className="shadow appearance-none border rounded-md w-full py-2 px-3 text-black"
-            placeholder="Enter username"
+            required
+            autoFocus
+            className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Enter your username"
           />
         </div>
 
         <div className="mb-6">
-          <label className="block text-black font-bold mb-2" htmlFor="password">
+          <label className="block text-sm font-medium text-gray-300 mb-1">
             Password
           </label>
           <input
-            id="password"
             type="password"
-            required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-black"
-            placeholder="Enter password"
+            required
+            className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="••••••••"
           />
         </div>
 
-        <div className="flex items-center justify-center">
-          <button
-            type="submit"
-            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
-          >
-            Login
-          </button>
-        </div>
+        <button
+          type="submit"
+          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-200"
+        >
+          Login
+        </button>
       </form>
     </div>
   );
